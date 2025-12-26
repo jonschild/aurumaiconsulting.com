@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aurum AI Consulting — Gold-standard AI systems for small businesses</title>
+
+  <meta name="description" content="Aurum AI Consulting builds AI automation systems for small businesses: AI phone answering + scheduling, AI chat support, workflow automation, and custom AI agents that free up time and grow revenue." />
+  <meta name="theme-color" content="#06070D" />
+
+  <meta property="og:title" content="Aurum AI Consulting — Gold-standard AI systems for small businesses" />
+  <meta property="og:description" content="Automate the work. Grow the business. Get your life back. AI phone answering, scheduling, chat support, and workflow automation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aurumaiconsulting.com/" />
+
+  <style>
+    :root{
+      /* Brand */
+      --bg:#06070D;
+      --bg2:#0B0D16;
+      --text:#F2F6FF;
+      --muted:#B7C1DB;
+      --line:rgba(255,255,255,.10);
+
+      /* Aurum (gold) */
+      --gold:#D9B65D;
+      --gold2:#B8923B;
+      --goldSoft:rgba(217,182,93,.12);
+
+      /* Layout */
+      --max:1120px;
+      --r:18px;
+      --shadow:0 24px 80px rgba(0,0,0,.55);
+      --shadow2:0 18px 60px rgba(0,0,0,.35);
+
+      /* Typography */
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+      /* Hero image (hotlinked). Recommended: download + save as /hero.jpg and set url('hero.jpg') */
+      --hero-img: url('https://www.winklawfirm.com/wp-content/uploads/happy-business-owner-in-warehouse.jpg');
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 16% 10%, rgba(217,182,93,.18), transparent 60%),
+        radial-gradient(900px 700px at 86% 18%, rgba(120,155,255,.12), transparent 55%),
+        linear-gradient(180deg, #04050A 0%, var(--bg) 50%, #04050A 100%);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Focus accessibility */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible{
+      outline:2px solid rgba(217,182,93,.85);
+      outline-offset:3px;
+      border-radius:12px;
+    }
+
+    /* ===== NAV ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(6,7,13,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .navInner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:950;
+      font-size:13px;
+    }
+    .mark{
+      width:14px; height:14px;
+      border-radius:3px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      box-shadow: 0 0 24px rgba(217,182,93,.30);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:3px;
+      border:1px solid rgba(0,0,0,.35);
+      border-radius:2px;
+      opacity:.65;
+    }
+    .links{
+      display:flex; align-items:center; gap:18px;
+      color:var(--muted);
+      font-weight:900;
+      font-size:14px;
+    }
+    .links a{
+      padding:6px 10px;
+      border-radius:999px;
+      transition: background .15s ease, color .15s ease;
+    }
+    .links a:hover{color:var(--text); background: rgba(255,255,255,.03)}
+
+    /* ===== BUTTONS ===== */
+    .pill{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:950;
+      white-space:nowrap;
+      user-select:none;
+      cursor:pointer;
+      transition: transform .15s ease, filter .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .pillGold{
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color:#140F06;
+      box-shadow: 0 10px 30px rgba(217,182,93,.20);
+    }
+    .pillGold:hover{transform: translateY(-1px); filter:brightness(1.03)}
+    .pillGhost{
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      border-color: var(--line);
+    }
+    .pillGhost:hover{border-color: rgba(217,182,93,.35)}
+
+    /* ===== HERO ===== */
+    .hero{padding:78px 0 36px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .kicker{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-weight:950;
+      font-size:12px;
+    }
+    h1{
+      margin:12px 0 12px;
+      font-size: clamp(36px, 4vw, 56px);
+      line-height:1.03;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.65;
+      max-width: 62ch;
+    }
+    .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.55;
+    }
+    .note b{color:var(--text)}
+    .goldLine{
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(217,182,93,.55), transparent);
+      margin:18px 0 0;
+      opacity:.85;
+    }
+
+    /* Bauhaus panel with image */
+    .panel{
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 360px;
+    }
+    .panelTop{
+      padding:18px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .panelTitle{
+      font-weight:950;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .panelCopy{
+      color:var(--muted);
+      line-height:1.6;
+      font-size:13px;
+    }
+    .panelCopy b{color:var(--text)}
+    .panelImg{
+      position:relative;
+      flex:1;
+      min-height: 190px;
+      background:
+        radial-gradient(420px 240px at 25% 20%, rgba(217,182,93,.22), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+    .panelImg::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image: var(--hero-img);
+      background-size:cover;
+      background-position:center;
+      opacity:.90;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .panelImg::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(0deg, rgba(6,7,13,.92), rgba(6,7,13,.40) 55%, rgba(6,7,13,.15)),
+        radial-gradient(600px 300px at 40% 15%, rgba(217,182,93,.22), transparent 55%);
+      pointer-events:none;
+    }
+
+    .panelBadgeRow{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      padding:18px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.10);
+    }
+    .metric{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:12px;
+      background: rgba(12,16,32,.55);
+    }
+    .metric .num{
+      font-size:18px;
+      font-weight:950;
+      background: linear-gradient(135deg, var(--gold), #F4E4B2);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .metric .lab{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section{padding:52px 0}
+    .titleRow{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:18px; margin-bottom:16px;
+    }
+    h2{margin:0; font-size:28px; letter-spacing:-.01em}
+    .hint{color:var(--muted); max-width:62ch; line-height:1.65}
+
+    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .grid4{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px}
+
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background: rgba(12,16,32,.45);
+      padding:16px;
+      box-shadow: var(--shadow2);
+    }
+    .cardTop{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .tag{
+      font-family: var(--mono);
+      font-size:12px;
+      color: rgba(217,182,93,.95);
+      letter-spacing:.08em;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(217,182,93,.28);
+      background: rgba(217,182,93,.06);
+    }
+    .shape{
+      width:38px; height:38px; border-radius:10px;
+      background:
+        radial-gradient(18px 18px at 28% 30%, rgba(255,255,255,.18), transparent 55%),
+        linear-gradient(135deg, rgba(217,182,93,.20), rgba(120,155,255,.14));
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .card h3{margin:10px 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+
+    /* ===== PROCESS ===== */
+    .steps{display:grid; gap:12px}
+    .step{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background: rgba(12,16,32,.45);
+    }
+    .badge{
+      min-width:32px; height:32px;
+      border-radius:999px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color:#140F06;
+      font-weight:950;
+      flex:0 0 auto;
+    }
+    .step b{display:block; margin-bottom:4px}
+
+    /* ===== TESTIMONIALS ===== */
+    .quote{
+      border:1px solid rgba(217,182,93,.22);
+      background: rgba(217,182,93,.06);
+    }
+    .quoteMark{
+      font-family: var(--mono);
+      color: rgba(217,182,93,.95);
+      font-weight:950;
+      letter-spacing:.08em;
+    }
+    .who{
+      margin-top:10px;
+      display:flex; align-items:center; gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .avatar{
+      width:34px; height:34px; border-radius:999px;
+      background: linear-gradient(135deg, rgba(217,182,93,.40), rgba(120,155,255,.18));
+      border:1px solid rgba(255,255,255,.10);
+      flex:0 0 auto;
+    }
+
+    /* ===== TOOLS ===== */
+    .toolList{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+    }
+    .tool{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:12px 12px;
+      background: rgba(255,255,255,.02);
+      color:var(--muted);
+      font-weight:900;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    .tool span{color:var(--text); font-weight:950}
+    .tool i{
+      font-style:normal;
+      font-family: var(--mono);
+      font-size:12px;
+      color: rgba(217,182,93,.95);
+      opacity:.9;
+    }
+
+    /* ===== CONTACT ===== */
+    .form{display:grid; gap:10px; margin-top:12px}
+    label{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font: inherit;
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .contactBox{
+      display:grid;
+      gap:10px;
+      padding:14px;
+      border-radius: var(--r);
+      border:1px solid rgba(217,182,93,.22);
+      background: rgba(217,182,93,.06);
+    }
+    .contactRow{
+      display:flex; flex-wrap:wrap; gap:10px;
+      align-items:center; justify-content:space-between;
+    }
+    .contactRow a{
+      color:var(--text);
+      font-weight:950;
+      border-bottom:1px solid rgba(217,182,93,.35);
+    }
+    .fine{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.55;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer{
+      padding:34px 0 44px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+    .footRow{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:flex-end;
+    }
+    .footBrand{
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:950;
+      font-size:12px;
+      color:var(--text);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr}
+      .grid4{grid-template-columns: repeat(2, 1fr)}
+      .grid3{grid-template-columns: 1fr}
+      .grid2{grid-template-columns: 1fr}
+      .toolList{grid-template-columns: repeat(2, 1fr)}
+    }
+    @media (max-width: 560px){
+      .links{display:none}
+      .grid4{grid-template-columns: 1fr}
+      .toolList{grid-template-columns: 1fr}
+      .panelBadgeRow{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="wrap navInner">
+      <a class="brand" href="#top" aria-label="Aurum AI Consulting">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Aurum AI Consulting</span>
+      </a>
+
+      <nav class="links" aria-label="Primary">
+        <a href="#solutions">Solutions</a>
+        <a href="#process">Process</a>
+        <a href="#tools">Tools</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="pill pillGold" href="#contact">Book a Free AI Strategy Call</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap heroGrid">
+        <div>
+          <div class="kicker">Aurum = gold • gold-standard systems for small businesses</div>
+          <h1>Automate the work. Grow the business. Get your life back.</h1>
+          <p class="sub">
+            We install <b>professional, tasteful AI automation systems</b> that remove manual work, speed up operations,
+            and help owners reclaim time for what matters: family, health, and life.
+          </p>
+
+          <div class="heroActions">
+            <a class="pill pillGold" href="#contact">Request a Free Strategy Call</a>
+            <a class="pill pillGhost" href="#solutions">See the Solutions</a>
+          </div>
+
+          <div class="goldLine"></div>
+
+          <p class="note">
+            Built for teams that don’t have time for “AI experiments.” We install an <b>AI Operating System</b>:
+            measurable ROI, clear handoff, and ongoing optimization.
+          </p>
+        </div>
+
+        <aside class="panel" aria-label="Aurum snapshot">
+          <div class="panelTop">
+            <div class="panelTitle">Outcome-driven automation</div>
+            <div class="panelCopy">
+              Imagine closing your laptop at 5pm—because <b>support, scheduling, follow-up, and reporting</b>
+              run automatically.
+            </div>
+            <div class="panelCopy">
+              We help owners spend more time with their <b>wife, kids, and dog</b>—while the business grows.
+            </div>
+          </div>
+
+          <div class="panelImg" aria-label="Happy business owners"></div>
+
+          <div class="panelBadgeRow" aria-label="Highlights">
+            <div class="metric">
+              <div class="num">Weeks, not months</div>
+              <div class="lab">Time to first system</div>
+            </div>
+            <div class="metric">
+              <div class="num">Gold-standard QA</div>
+              <div class="lab">Human-in-control</div>
+            </div>
+            <div class="metric">
+              <div class="num">Lower overhead</div>
+              <div class="lab">Less manual work</div>
+            </div>
+            <div class="metric">
+              <div class="num">Built to scale</div>
+              <div class="lab">Docs + handoff</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section id="solutions" class="section">
+      <div class="wrap">
+        <div class="titleRow">
+          <h2>Solutions we install</h2>
+          <div class="hint">Practical systems that increase speed, consistency, and revenue—while reducing workload.</div>
+        </div>
+
+        <div class="grid4">
+          <div class="card">
+            <div class="cardTop">
+              <div class="shape" aria-hidden="true"></div>
+              <div class="tag">01 • Voice</div>
+            </div>
+            <h3>AI Phone Answering + Scheduling</h3>
+            <p>
+              An AI answering system that can handle calls, capture leads, answer FAQs,
+              schedule appointments, and route complex cases to a human—24/7.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="cardTop">
+              <div class="shape" aria-hidden="true"></div>
+              <div class="tag">02 • Chat</div>
+            </div>
+            <h3>Automated Chat Support</h3>
+            <p>
+              Website + SMS chat that resolves common issues, qualifies leads, and hands off
+              to your team when needed—fast and consistent.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="cardTop">
+              <div class="shape" aria-hidden="true"></div>
+              <div class="tag">03 • Ops</div>
+            </div>
+            <h3>Workflow Automation</h3>
+            <p>
+              Remove manual steps: intake, email follow-up, invoices, CRM updates,
+              ticket triage, reporting, and recurring tasks.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="cardTop">
+              <div class="shape" aria-hidden="true"></div>
+              <div class="tag">04 • Agents</div>
+            </div>
+            <h3>Custom AI Agents</h3>
+            <p>
+              AI “employees” trained on your processes and knowledge—built with guardrails,
+              evaluation, and version control.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM / METHOD -->
+    <section class="section" aria-label="Problem and method">
+      <div class="wrap grid2">
+        <div class="card">
+          <div class="kicker">The problem</div>
+          <h2 style="margin-top:10px;">Owners are drowning in manual work.</h2>
+          <p class="hint" style="margin-top:10px;">
+            Calls, scheduling, support, admin, follow-ups, reporting—everything piles up.
+            Tools get bought. Nothing changes.
+          </p>
+        </div>
+        <div class="card">
+          <div class="kicker">The Aurum method</div>
+          <h2 style="margin-top:10px;">We rebuild operations with AI systems.</h2>
+          <p class="hint" style="margin-top:10px;">
+            Not demos. Not experiments. Real workflows that run daily—with security, logging, and human oversight.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section">
+      <div class="wrap">
+        <div class="titleRow">
+          <h2>How it works</h2>
+          <div class="hint">A fast path from strategy → production → measurable ROI.</div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="badge" aria-hidden="true">1</div>
+            <div>
+              <b>Discovery + ROI Map</b>
+              We identify high-leverage workflows, define success metrics, and prioritize by impact + feasibility.
+            </div>
+          </div>
+          <div class="step">
+            <div class="badge" aria-hidden="true">2</div>
+            <div>
+              <b>Architecture + Guardrails</b>
+              We design integrations, data flows, access control, logging, and human-in-the-loop controls.
+            </div>
+          </div>
+          <div class="step">
+            <div class="badge" aria-hidden="true">3</div>
+            <div>
+              <b>Build + Deploy</b>
+              We ship a first production system and document everything for smooth team adoption.
+            </div>
+          </div>
+          <div class="step">
+            <div class="badge" aria-hidden="true">4</div>
+            <div>
+              <b>Optimize + Expand</b>
+              Monitoring, evaluation, iteration—then expand into the next highest ROI workflows.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools" class="section">
+      <div class="wrap">
+        <div class="titleRow">
+          <h2>Tools we implement</h2>
+          <div class="hint">Tool-agnostic, outcome-driven. Common building blocks below.</div>
+        </div>
+
+        <div class="card" style="margin-bottom:14px;">
+          <p class="hint" style="margin:0;">
+            Typical integrations: <b>Google Workspace / Microsoft 365</b>, CRMs, ticketing systems, calendars,
+            payment tools, and internal docs/knowledge bases.
+          </p>
+        </div>
+
+        <div class="toolList" aria-label="Tool categories">
+          <div class="tool"><span>OpenAI</span> <i>LLMs</i></div>
+          <div class="tool"><span>Azure / AWS</span> <i>Cloud</i></div>
+          <div class="tool"><span>Zapier / Make</span> <i>Automation</i></div>
+          <div class="tool"><span>n8n</span> <i>Workflows</i></div>
+
+          <div class="tool"><span>Twilio</span> <i>Voice/SMS</i></div>
+          <div class="tool"><span>Calendly</span> <i>Scheduling</i></div>
+          <div class="tool"><span>HubSpot</span> <i>CRM</i></div>
+          <div class="tool"><span>Salesforce</span> <i>CRM</i></div>
+
+          <div class="tool"><span>Zendesk</span> <i>Support</i></div>
+          <div class="tool"><span>Intercom</span> <i>Chat</i></div>
+          <div class="tool"><span>Notion / Confluence</span> <i>Knowledge</i></div>
+          <div class="tool"><span>Slack / Teams</span> <i>Ops</i></div>
+
+          <div class="tool"><span>Stripe</span> <i>Payments</i></div>
+          <div class="tool"><span>QuickBooks</span> <i>Accounting</i></div>
+          <div class="tool"><span>Google Sheets</span> <i>Ops data</i></div>
+          <div class="tool"><span>Postgres</span> <i>Database</i></div>
+        </div>
+
+        <p class="fine" style="margin-top:12px;">
+          Note: Tool names may be trademarks of their owners. We’re tool-agnostic—our goal is outcomes.
+        </p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+      <div class="wrap">
+        <div class="titleRow">
+          <h2>Testimonials</h2>
+          <div class="hint">Replace these placeholders with real client quotes as you win engagements.</div>
+        </div>
+
+        <div class="grid3">
+          <div class="card quote">
+            <div class="quoteMark">“</div>
+            <h3 style="margin:8px 0 8px;">We got nights and weekends back.</h3>
+            <p>
+              Aurum automated intake + follow-ups and added AI chat support. Leads stopped falling through the cracks.
+              Our team is calmer—and revenue is up.
+            </p>
+            <div class="who">
+              <div class="avatar" aria-hidden="true"></div>
+              <div><b style="color:var(--text)">Operations Owner</b><br/>Home Services • 12 employees</div>
+            </div>
+          </div>
+
+          <div class="card quote">
+            <div class="quoteMark">“</div>
+            <h3 style="margin:8px 0 8px;">Calls turned into booked appointments.</h3>
+            <p>
+              The AI phone system answers after hours, handles FAQs, and books directly to our calendar.
+              We’re finally capturing demand instead of missing it.
+            </p>
+            <div class="who">
+              <div class="avatar" aria-hidden="true"></div>
+              <div><b style="color:var(--text)">Founder</b><br/>Professional Services • 6 employees</div>
+            </div>
+          </div>
+
+          <div class="card quote">
+            <div class="quoteMark">“</div>
+            <h3 style="margin:8px 0 8px;">Everything is faster and consistent.</h3>
+            <p>
+              Ticket triage, responses, and routing are automated with guardrails.
+              Customers get answers quickly, and our team focuses on real work.
+            </p>
+            <div class="who">
+              <div class="avatar" aria-hidden="true"></div>
+              <div><b style="color:var(--text)">Support Lead</b><br/>E-commerce • 20 employees</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="wrap grid2">
+        <div class="card">
+          <div class="kicker">Contact</div>
+          <h2 style="margin-top:10px;">Request a free AI strategy call</h2>
+          <p class="hint" style="margin-top:10px;">
+            Tell us what you want to automate and what’s slowing your business down.
+            We’ll map the fastest path to measurable ROI.
+          </p>
+
+          <div class="contactBox" style="margin-top:14px;">
+            <div class="contactRow">
+              <div class="fine"><b style="color:var(--text)">Email</b></div>
+              <a href="mailto:aai@aurumaiconsulting.com">aai@aurumaiconsulting.com</a>
+            </div>
+            <div class="contactRow">
+              <div class="fine"><b style="color:var(--text)">Phone</b></div>
+              <a href="tel:+19042019493">(904) 201-9493</a>
+            </div>
+            <div class="fine">
+              Prefer text or email? That’s fine. We respond within 1 business day.
+            </div>
+          </div>
+
+          <p class="fine" style="margin-top:14px;">
+            <b style="color:var(--text)">To enable email delivery:</b> Create a free Formspree form and paste your endpoint into the form action.
+          </p>
+        </div>
+
+        <div class="card">
+          <!-- FORM: Replace action with your real Formspree endpoint, e.g. https://formspree.io/f/xxxxabcd -->
+          <form class="form" action="PASTE_FORMSPREE_ENDPOINT_HERE" method="POST">
+            <input type="hidden" name="_subject" value="New Aurum AI Lead" />
+            <!-- Honeypot (spam trap) -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" required />
+
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" placeholder="(###) ###-####" />
+
+            <label for="company">Company</label>
+            <input id="company" name="company" placeholder="Company name" />
+
+            <label for="focus">What do you want to automate first?</label>
+            <select id="focus" name="focus" required>
+              <option value="" selected disabled>Select one</option>
+              <option>AI phone answering + scheduling</option>
+              <option>Automated chat support</option>
+              <option>Workflow automation (ops/admin)</option>
+              <option>Custom AI agents</option>
+              <option>Not sure yet</option>
+            </select>
+
+            <label for="message">Details</label>
+            <textarea id="message" name="message" placeholder="What’s manual today? What tools do you use? What would success look like?"></textarea>
+
+            <button class="pill pillGold" type="submit">Send Request</button>
+
+            <div class="fine">
+              By submitting, you agree Aurum may contact you about your request. No spam.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footRow">
+        <div>
+          <div class="footBrand">Aurum AI Consulting</div>
+          <div class="fine" style="margin-top:8px;">Gold-standard AI systems that free up time and scale small businesses.</div>
+        </div>
+        <div class="fine">© <span id="year"></span> Aurum AI Consulting • All rights reserved</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var el = document.getElementById("year");
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
